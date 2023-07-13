@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { SearchContext } from '../../context/SearchProvider'
 import { getBooksBySearch } from '../../services/books-services'
-import BooksList from '../BooksList/BooksList'
-
+import BooksList from '../BooksList/BooksList';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 const BooksLoader = () => {
   const [fetchState, setFetchState] = useState('')
   const {searchBook} = useContext(SearchContext)
@@ -10,7 +11,6 @@ const BooksLoader = () => {
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    console.log('This effect happens');
     if (searchBook === null) {
       return;
     }
@@ -29,7 +29,10 @@ const BooksLoader = () => {
   return (
     <>
       {fetchState === 'LOADING' && (
-        <p>Searching for Books About: {searchBook}</p>
+          <Box sx={{ width: '100%'}}>
+            <p>Searching for Books About: {searchBook}</p>
+            <LinearProgress />
+          </Box>
       )}
       {fetchState === 'SUCCESS' && <BooksList books={books}/>}
       {fetchState === 'ERROR' && (

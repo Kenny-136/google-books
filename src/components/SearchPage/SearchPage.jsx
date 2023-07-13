@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import SearchBar from '../SearchBar/SearchBar'
 import BooksLoader from '../BooksLoader/BooksLoader'
 import { SearchContext } from '../../context/SearchProvider'
-
+import Header from '../Header/Header'
 const SearchPage = () => {
   const { setSearchBook } = useContext(SearchContext);
   const submitBook = (value) => {
@@ -12,6 +12,7 @@ const SearchPage = () => {
   return (
     <main>
       <SearchBar formSubmit={submitBook}/>
+      <Header></Header>
       <BooksLoader />
     </main>
   )

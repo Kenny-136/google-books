@@ -1,6 +1,7 @@
 import SearchPage from './components/SearchPage/SearchPage'
 import SearchProvider from './context/SearchProvider'
 
+
 function App() {
   return (
     <>
