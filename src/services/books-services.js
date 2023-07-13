@@ -1,5 +1,4 @@
 export const getBooksBySearch = async (searchString) => {
-  console.log('book search runs')
   if (searchString === '') {
     throw new Error('Cannot Seach for nothing')
   }

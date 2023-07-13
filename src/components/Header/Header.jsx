@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -8,6 +8,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const defaultTheme = createTheme();
 
 const Header = () => {
+
   return (
     <ThemeProvider theme={defaultTheme}>
     <CssBaseline />
@@ -27,7 +28,7 @@ const Header = () => {
             color="text.primary"
             gutterBottom
           >
-            Search a Book!
+            Search a Book
           </Typography>
           <Typography variant="h5" align="center" color="text.secondary" paragraph>
             You search a book by using the search input on the top right corner.
